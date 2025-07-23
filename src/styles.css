@@ -29,3 +29,10 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+#header img {
+  width: 50vh;      /* o cualquier tamaño pequeño */
+  height: auto;     /* mantiene proporción */
+  border-radius: 8px; /* opcional: esquinas redondeadas */
+  object-fit: cover;
+}
