@@ -5,6 +5,22 @@ body {
   color: #333;
 }
 
+h1{
+  font-size: 2rem;
+  margin: 0 0 1rem;
+}
+
+h2{
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
 #app {
   display: flex;
   flex-direction: column;
@@ -12,7 +28,7 @@ body {
 }
 
 #header {
-  background: linear-gradient(125deg, #613089 50%, white 25%);
+  background: linear-gradient(160deg, #613089 50%, white 25%);
   color: white;
   padding: 1rem;
   display: flex;
@@ -23,27 +39,7 @@ body {
   flex-wrap: wrap;
 }
 
-#footer {
-  background-color: #1B3C53;
-  color: white;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-#main {
-  background-color: #456882;
-  padding: 2rem;
-  flex: 1 1 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
+/*image container styles*/
 .image-container {
  position: relative;
   display: grid;
@@ -65,7 +61,6 @@ body {
   border-radius: inherit;
   object-fit: cover;
 }
-
 
 .image-container .name {
  display: grid;
@@ -101,9 +96,11 @@ body {
 .image-container:hover img {
   transform: scale(1.1);
 }
-
+/*card styles*/
 .card {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
   padding: 16px;
   background: #f5f5f5;
   border-radius: 8px;
@@ -119,19 +116,63 @@ body {
   background: linear-gradient(120deg, #f5f5f5 80%, #e0c3fc 100%);
 }
 
-h1{
-  font-size: 2rem;
-  margin: 0 0 1rem;
+/*card icon styles*/
+.icon-style {
+  font-size: 48px;   
+  color: #333;          
+  margin: 1rem;        
+  transition: transform 0.3s ease;
 }
 
-h2{
-  font-size: 1.5rem;
-  margin: 0 0 0.5rem;
+.icon-style:hover {
+  transform: scale(1.2); 
+  color: #000;  
+  cursor: pointer;    
+}
+/* main content styles */
+#main {
+  background-color: #456882;
+  padding: 2rem;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-p {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin: 0;
+/*main grid items styles*/
+.grid-container{  
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
+.grid-item{
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0.5rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.grid-item img {
+  max-width: 100%;
+  max-height: 120px;
+  object-fit: contain;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+#footer {
+  background-color: #1B3C53;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
