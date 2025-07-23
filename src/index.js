@@ -8,7 +8,7 @@ app.innerHTML = "";
 const header = document.createElement("header");
 header.id = "header";
 
-// Imagen + nombre superpuesto
+// IMG + NAME
 const container = document.createElement("div");
 container.className = "image-container";
 
@@ -20,11 +20,10 @@ const name = document.createElement("h2");
 name.textContent = "Juan Roma";
 name.className = "name";
 
-// Estructura correcta: img y h2 dentro del contenedor
 container.appendChild(img);
 container.appendChild(name);
 
-// CARD con texto
+// TEXT CARD
 const card = document.createElement("div");
 card.className = "card";
 
@@ -38,7 +37,7 @@ text.textContent =
 card.appendChild(title);
 card.appendChild(text);
 
-// Agrega todo al header
+// APPEND HEADER
 header.appendChild(container);
 header.appendChild(card);
 
@@ -52,5 +51,5 @@ const footer = document.createElement("footer");
 footer.id = "footer";
 footer.textContent = "Footer content";
 
-// Agregar todo al DOM
+// ADD DOM
 app.append(header, main, footer);

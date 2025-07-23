@@ -47,7 +47,7 @@ body {
   position: relative;
   display: inline-block;
   width: 100%;
-  max-width: 400px;
+  max-width: 250px;
 }
 
 .image-container img {
