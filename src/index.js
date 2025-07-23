@@ -1,6 +1,7 @@
 import "./styles.css";
 import headerPhoto from "./assets/headerPhoto.jpg";
 import gifApi from "./assets/gifApi.png";
+import todoListImg from "./assets/todoList.png";
 
 /* ------------------ INIT ------------------ */
 const app = document.getElementById("app");
@@ -34,8 +35,8 @@ const title = document.createElement("h1");
 title.textContent = "About Me";
 
 // Text
-const text = document.createElement("p");
-text.textContent = "Hello! I'm Juan Roma, a passionate web developer with a love for creating beautiful and functional websites. I enjoy coding, learning new technologies, and sharing my knowledge with others.";
+const cardText = document.createElement("p");
+cardText.textContent = "Hello! I'm Juan Roma, a passionate web developer with a love for creating beautiful and functional websites. I enjoy coding, learning new technologies, and sharing my knowledge with others.";
 
 // Icons container (optional for layout clarity)
 const iconsContainer = document.createElement("div");
@@ -54,7 +55,7 @@ iconsContainer.appendChild(githubIcon);
 
 // Append all card content
 card.appendChild(title);
-card.appendChild(text);
+card.appendChild(cardText);
 card.appendChild(iconsContainer);
 
 // Append to header
@@ -69,44 +70,72 @@ const gifImg = document.createElement("img");
 gifImg.src = gifApi;
 gifImg.alt = "GIF API";
 
+const todoList = document.createElement("img");
+todoList.src = todoListImg;
+todoList.alt = "Todo List App";
 
 
-// Add a simple grid layout for main content
-const gridContainer = document.createElement("div");          
+// Simplified grid layout for main content
+const gridContainer = document.createElement("div");
 gridContainer.className = "grid-container";
-const gridItem1 = document.createElement("div");
-gridItem1.className = "grid-item";
-const gridItem2 = document.createElement("div");
-gridItem2.className = "grid-item";
-gridItem2.textContent = "Grid Item 2";
-const gridItem3 = document.createElement("div");
-gridItem3.className = "grid-item";
-gridItem3.textContent = "Grid Item 3";
-const gridItem4 = document.createElement("div");
-gridItem4.className = "grid-item";
-gridItem4.textContent = "Grid Item 4";
-const gridItem5 = document.createElement("div");
-gridItem5.className = "grid-item";
-gridItem5.textContent = "Grid Item 5";
-const gridItem6 = document.createElement("div");
-gridItem6.className = "grid-item";
-gridItem6.textContent = "Grid Item 6";
-const gridItem7 = document.createElement("div");
-gridItem7.className = "grid-item";
-gridItem7.textContent = "Grid Item 7";
-const gridItem8 = document.createElement("div");
-gridItem8.className = "grid-item";
-gridItem8.textContent = "Grid Item 8";
-gridContainer.append(gridItem1, gridItem2, gridItem3, gridItem4,gridItem5, gridItem6, gridItem7, gridItem8);
 
-gridItem1.appendChild(gifImg);
+// Helper to create grid items con título y párrafo
+function createGridItem(titleText, paragraphText, extra) {
+    const item = document.createElement("div");
+    item.className = "grid-item";
+
+    if (extra) item.appendChild(extra);
+
+    if (titleText) {
+        const title = document.createElement("h3");
+        title.textContent = titleText;
+        item.appendChild(title);
+    }
+
+    if (paragraphText) {
+        const paragraph = document.createElement("p");
+        paragraph.textContent = paragraphText;
+        item.appendChild(paragraph);
+    }
+
+    return item;
+}
+
+// Arrays de títulos y textos
+const titles = [
+    "Gif Generator",
+    "Weather App",
+    "Dynamic User interface",
+    "Todo List",
+    "Witcher Page",
+    "Tic Tac Toe",
+    "Testimonials",
+    "Contact"
+];
+
+const texts = [
+    "This is a grid item. You can add more content here.",
+    "Explore our latest products.",
+    "Join our newsletter for updates.",
+    "Check out our gallery.",
+    "Meet the team behind the scenes.",
+    "Discover our story.",
+    "See what customers are saying.",
+    "Contact us for more information."
+];
+
+// Primer ítem con imagen
+const gridItem1 = createGridItem(titles[0], texts[0], gifImg);
+gridContainer.appendChild(gridItem1);
+const gridItem2 = createGridItem(titles[1], texts[1], todoListImg);
+gridContainer.appendChild(gridItem2);
+
+// Resto de los ítems sin imagen
+for (let i = 2; i < titles.length; i++) {
+    gridContainer.appendChild(createGridItem(titles[i], texts[i]));
+}
+
 main.appendChild(gridContainer);
-
-
-
-
-
-
 /* ------------------ FOOTER ------------------ */
 const footer = document.createElement("footer");
 footer.id = "footer";

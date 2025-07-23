@@ -148,6 +148,7 @@ p {
   max-width: 1200px;
   margin: auto;
 }
+
 .grid-item{
   background-color: #f0f0f0;
   border-radius: 8px;
@@ -175,4 +176,63 @@ p {
   flex-shrink: 0;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+/* Tablet: desde 768px hasta 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.125rem;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    flex-direction: row;
+    gap: 1rem;
+    max-width: 100%;
+  }
+
+  .image-container {
+    max-width: 200px;
+  }
+}
+
+
+
+/* Smartphone: hasta 767px */
+@media (max-width: 767px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .image-container {
+    max-width: 100%;
+  }
 }
