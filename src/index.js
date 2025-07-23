@@ -1,3 +1,5 @@
+//index.js
+/* ------------------ IMPORTS ------------------ */
 import "./styles.css";
 import headerPhoto from "./assets/headerPhoto.jpg";
 import gifApi from "./assets/gifApi.png";
@@ -10,6 +12,7 @@ app.innerHTML = "";
 /* ------------------ HEADER ------------------ */
 const header = document.createElement("header");
 header.id = "header";
+
 
 /* ---------- Image + Name ---------- */
 const container = document.createElement("div");
@@ -38,7 +41,7 @@ title.textContent = "About Me";
 const cardText = document.createElement("p");
 cardText.textContent = "Hello! I'm Juan Roma, a passionate web developer with a love for creating beautiful and functional websites. I enjoy coding, learning new technologies, and sharing my knowledge with others.";
 
-// Icons container (optional for layout clarity)
+// Icons container
 const iconsContainer = document.createElement("div");
 iconsContainer.className = "card-icons";
 
@@ -66,20 +69,19 @@ header.appendChild(card);
 const main = document.createElement("main");
 main.id = "main";
 
-const gifImg = document.createElement("img");
-gifImg.src = gifApi;
-gifImg.alt = "GIF API";
-
-const todoList = document.createElement("img");
-todoList.src = todoListImg;
-todoList.alt = "Todo List App";
-
-
-// Simplified grid layout for main content
+/* ---------- Grid Helper Functions ---------- */
 const gridContainer = document.createElement("div");
 gridContainer.className = "grid-container";
 
-// Helper to create grid items con título y párrafo
+// Crea una nueva imagen
+function createImage(src, alt) {
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = alt;
+    return img;
+}
+
+// Crea un grid item con título, texto y opcionalmente una imagen
 function createGridItem(titleText, paragraphText, extra) {
     const item = document.createElement("div");
     item.className = "grid-item";
@@ -101,11 +103,11 @@ function createGridItem(titleText, paragraphText, extra) {
     return item;
 }
 
-// Arrays de títulos y textos
+/* ---------- Grid Content Data ---------- */
 const titles = [
     "Gif Generator",
     "Weather App",
-    "Dynamic User interface",
+    "Dynamic User Interface",
     "Todo List",
     "Witcher Page",
     "Tic Tac Toe",
@@ -124,18 +126,20 @@ const texts = [
     "Contact us for more information."
 ];
 
-// Primer ítem con imagen
-const gridItem1 = createGridItem(titles[0], texts[0], gifImg);
-gridContainer.appendChild(gridItem1);
-const gridItem2 = createGridItem(titles[1], texts[1], todoListImg);
-gridContainer.appendChild(gridItem2);
+const images = [
+    createImage(gifApi, "GIF API"),
+    createImage(todoListImg, "Todo List App")
+];
 
-// Resto de los ítems sin imagen
-for (let i = 2; i < titles.length; i++) {
-    gridContainer.appendChild(createGridItem(titles[i], texts[i]));
+/* ---------- Populate Grid ---------- */
+for (let i = 0; i < titles.length; i++) {
+    const img = images[i] || null;
+    const item = createGridItem(titles[i], texts[i], img);
+    gridContainer.appendChild(item);
 }
 
 main.appendChild(gridContainer);
+
 /* ------------------ FOOTER ------------------ */
 const footer = document.createElement("footer");
 footer.id = "footer";
