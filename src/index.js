@@ -32,8 +32,7 @@ title.textContent = "About Me";
 
 const text = document.createElement("p");
 text.textContent =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-
+  "Hello! I'm Juan Roma, a passionate web developer with a love for creating beautiful and functional websites. I enjoy coding, learning new technologies, and sharing my knowledge with others.";
 card.appendChild(title);
 card.appendChild(text);
 
