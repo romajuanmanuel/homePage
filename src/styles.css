@@ -11,7 +11,7 @@ body {
   min-height: 100vh;
 }
 
-#header, #footer {
+#header {
   background-color: #1B3C53;
   color: white;
   padding: 1rem;
@@ -19,8 +19,20 @@ body {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-
+#footer {
+  background-color: #1B3C53;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 #main {
   background-color: #456882;
   padding: 2rem;
@@ -30,24 +42,43 @@ body {
   justify-content: center;
 }
 
-#header img {
-  width: 50vh;      /* o cualquier tamaño pequeño */
-  height: auto;     /* mantiene proporción */
-  border-radius: 8px; /* opcional: esquinas redondeadas */
+/* Contenedor de imagen con texto superpuesto */
+.image-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 400px;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
   object-fit: cover;
 }
 
-.card{
-  display: inline-block;
-  margin-left: 20px ;
+.image-container .name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
+
+/* Tarjeta de contenido */
 .card {
   display: inline-block;
-  margin-left: 20px;
   padding: 16px;
   background: #f5f5f5;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  vertical-align: middle;
-  color:black;
+  color: black;
+  max-width: 400px;
 }
