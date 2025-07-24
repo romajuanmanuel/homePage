@@ -1,25 +1,29 @@
 /*styles.css*/
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&display=swap');
+
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Bitcount Prop Single', sans-serif;
   background-color: peachpuff;
   color: #333;
 }
 
 h1{
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin: 0 0 1rem;
 }
 
 h2{
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin: 0 0 0.5rem;
 }
 
 p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.5;
   margin: 0;
+  font-family: 'Bitcount Prop Single', sans-serif;
 }
 
 #app {
@@ -40,64 +44,6 @@ p {
   flex-wrap: wrap;
 }
 
-
-/*image container styles*/
-.image-container {
- position: relative;
-  display: grid;
-  max-width: 250px;
-  border-radius: 1rem;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.image-container > * {
-  grid-area: 1 / 1;
-  transition: 0.4s;
-}
-
-.image-container img {
- width: 100%;
-  height: auto;
-  display: block;
-  border-radius: inherit;
-  object-fit: cover;
-}
-
-.image-container .name {
- display: grid;
-  align-items: end;
-  justify-items: center;
-  font-family: sans-serif;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: transparent;
-  padding: 0.75rem;
-  background: var(--c, rgba(191, 191, 191, 0.6));
-  clip-path: inset(0 var(--_i,100%) 0 0);
-  mask:
-    linear-gradient(#000 0 0),
-    linear-gradient(#000 0 0);
-  -webkit-mask:
-    linear-gradient(#000 0 0),
-    linear-gradient(#000 0 0);
-  mask-composite: xor;
-  -webkit-mask-composite: xor;
-  mask-clip: text, padding-box;
-  -webkit-mask-clip: text, padding-box;
-  margin: -1px;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-}
-
-.image-container:hover .name {
-  --_i: 0%;
-  color: white;
-}
-
-.image-container:hover img {
-  transform: scale(1.1);
-}
 /*card styles*/
 .card {
   display: flex;
@@ -118,6 +64,7 @@ p {
   background: linear-gradient(120deg, #f5f5f5 80%, #e0c3fc 100%);
 }
 
+
 /*card icon styles*/
 .icon-style {
   font-size: 48px;   
@@ -130,6 +77,21 @@ p {
   transform: scale(1.2); 
   color: #000;  
   cursor: pointer;    
+}
+
+.card-icons {
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.icon-style {
+  font-size: 1.5rem;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.icon-style:hover {
+  color: #0077b5;
 }
 /* main content styles */
 #main {
@@ -249,4 +211,74 @@ p {
   .image-container {
     max-width: 100%;
   }
+}
+
+
+/* ─── Iris‑Wipe Custom Property ─── */
+@property --radius {
+  syntax: '<percentage>';
+  inherits: true;
+  initial-value: -5%;
+}
+
+@keyframes iris-wipe {
+  to { --radius: 105%; }
+}
+
+/* ─── Contenedor Principal ─── */
+.scene-wrapper {
+  position: relative;
+  width: 250px;               
+  aspect-ratio:  9 / 16;
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* ─── Escenas Superpuestas ─── */
+.scene {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Imagen de fondo */
+.scene-1 {
+  z-index: 1;
+}
+
+/* Capa de texto/nombre oculto tras máscara */
+.scene-2 {
+  background: rgba(0, 0, 0, 0.6);
+  display: grid;
+  place-items: center;
+  z-index: 0;
+  mask-image: radial-gradient(
+    circle,
+    #fff calc(var(--radius) - 5%),
+    transparent calc(var(--radius) + 5%)
+  );
+  -webkit-mask-image: radial-gradient(
+    circle,
+    #fff calc(var(--radius) - 5%),
+    transparent calc(var(--radius) + 5%)
+  );
+}
+
+/* Título centrado en cada capa */
+.scene-title {
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  margin: 0;
+  text-shadow: 0 0 5px rgba(0,0,0,0.7);
+  font-family: 'Bitcount Prop Single', sans-serif;
+}
+
+/* Dispara la transición al hover/focus */
+.scene-wrapper:hover .scene-2,
+.scene-wrapper:focus .scene-2 {
+  z-index: 2;
+  animation: iris-wipe 1s linear forwards;
 }
