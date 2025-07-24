@@ -236,6 +236,8 @@ p {
   border-radius: 1rem;
   overflow: hidden;
   cursor: pointer;
+     box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+
 }
 
 /* ─── Escenas Superpuestas ─── */
@@ -283,5 +285,5 @@ p {
 .scene-wrapper:hover .scene-2,
 .scene-wrapper:focus .scene-2 {
   z-index: 2;
-  animation: iris-wipe 1s linear forwards;
+  animation: iris-wipe 0.5s linear forwards;
 }
