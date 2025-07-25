@@ -32,7 +32,7 @@ p {
   min-height: 100vh;
 }
 
-#header {
+#header,#footer {
   background: linear-gradient(168deg, #613089 50%, white 50%);
   color: white;
   padding: 1rem;
@@ -145,17 +145,6 @@ p {
 
 }
 
-#footer {
-  background-color: #1B3C53;
-  color: white;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
 
 /* Tablet: desde 768px hasta 1023px */
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -236,8 +225,12 @@ p {
   border-radius: 1rem;
   overflow: hidden;
   cursor: pointer;
-     box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
-
+  box-shadow:
+  rgba(240, 46, 170, 0.4) 0px 5px,
+  rgba(240, 46, 170, 0.3) 0px 10px,
+  rgba(240, 46, 170, 0.2) 0px 15px,
+  rgba(240, 46, 170, 0.1) 0px 20px,
+  rgba(240, 46, 170, 0.05) 0px 25px;
 }
 
 /* ─── Escenas Superpuestas ─── */
@@ -286,4 +279,10 @@ p {
 .scene-wrapper:focus .scene-2 {
   z-index: 2;
   animation: iris-wipe 0.5s linear forwards;
+}
+
+#footer img{
+  max-width: 100%;
+  max-height: 120px;
+  object-fit: contain;
 }

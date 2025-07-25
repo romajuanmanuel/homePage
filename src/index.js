@@ -214,7 +214,35 @@ main.appendChild(gridContainer);
 /* ------------------ FOOTER ------------------ */
 const footer = document.createElement("footer");
 footer.id = "footer";
-footer.textContent = "Footer content";
+
+// Left footer section
+const leftFooter = document.createElement("div");
+leftFooter.className = "left-footer";
+
+const leftFooterTitle = document.createElement("h1");
+leftFooterTitle.textContent = "Contact Me";
+
+const leftFooterParagraph = document.createElement("p");
+leftFooterParagraph.textContent = "Feel free to reach out via email at: romajuanmanuel@gmail.com";
+
+leftFooter.append(leftFooterTitle, leftFooterParagraph);
+
+// Right footer section
+const rightFooter = document.createElement("div");
+rightFooter.className = "right-footer";
+
+const rightFooterImg = document.createElement("img");
+rightFooterImg.src = headerPhoto;
+rightFooterImg.alt = "Contact Image";
+rightFooterImg.className = "footer-image";
+
+rightFooter.appendChild(rightFooterImg);
+
+// Append to footer
+footer.append(leftFooter, rightFooter);
+
+// Finally append to document
+document.body.appendChild(footer);
 
 /* ------------------ HEAD INJECTION ------------------ */
 const deviconLink = document.createElement("link");
