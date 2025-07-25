@@ -22,5 +22,6 @@ export function createHeader() {
   wrapper.append(scene1, scene2);
   header.appendChild(wrapper);
 
+
   return header;
 }

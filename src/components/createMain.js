@@ -22,12 +22,12 @@ export function createMain() {
     ];
 
     const texts = [
-        "THIS IS A GRID ITEM. YOU CAN ADD MORE CONTENT HERE.",
-        "EXPLORE OUR LATEST PRODUCTS.",
-        "JOIN OUR NEWSLETTER FOR UPDATES.",
-        "CHECK OUT OUR GALLERY.",
-        "MEET THE TEAM BEHIND THE SCENES.",
-        "DISCOVER OUR STORY."
+        "Search and display trending or custom GIFs using the Giphy API.",
+        "Organize your daily tasks efficiently with a responsive to-do list.",
+        "Get real-time weather updates based on your current location.",
+        "Play a classic game of Tic Tac Toe with clean, interactive UI.",
+        "A fan-made Witcher-themed page featuring characters and lore.",
+        "Manage your personal book collection—add, view, and remove books."
     ];
 
     const images = [
