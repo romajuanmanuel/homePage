@@ -173,6 +173,11 @@ p {
   .image-container {
     max-width: 200px;
   }
+
+  #footer{
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 
@@ -202,6 +207,10 @@ p {
 
   .image-container {
     max-width: 100%;
+  }
+  #footer{
+    flex-direction: column;
+    align-items: center;
   }
 }
 
