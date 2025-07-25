@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -15,11 +18,12 @@
   "bugs": {
     "url": "https://github.com/romajuanmanuel/homePage/issues"
   },
-  "homepage": "https://github.com/romajuanmanuel/homePage#readme",
+  "homepage": "https://romajuanmanuel.github.io/homePage",
   "description": "",
   "devDependencies": {
     "copy-webpack-plugin": "^13.0.0",
     "css-loader": "^7.1.2",
+    "gh-pages": "^6.3.0",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.3",
     "style-loader": "^4.0.0",
